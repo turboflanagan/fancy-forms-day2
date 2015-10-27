@@ -1,0 +1,72 @@
+.form-wrapper{
+	max-width: 500px;
+	background-color: #f4f7f8;
+	margin: auto;
+	padding: 15px 30px 15px 20px;
+
+}
+
+.form-wrapper input, .form-wrapper textarea, .form-wrapper select{
+	font-family: serif;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	margin: 0;
+	padding: 7px;
+	width: 100%;
+	background-color: #e8eeef;
+	color: #8a97a0;
+	margin-bottom: 30px;
+
+}
+
+.form-wrapper input:focus, .form-wrapper textarea:focus, .form-wrapper select{
+	background-color: #d2d9dd;
+}
+
+.form-wrapper .number{
+	background: green;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	font-size: 10px;
+	border-radius: 15px 15px 15px 0px;
+	padding: 3px 8px;
+	margin-right: 6px;
+}
+
+.form-wrapper input[type="submit"]{
+	padding: 20px;
+	background: green;
+	font-size: 18px;
+	color: white;
+}
+
+.form-wrapper input[type="submit"]:hover{
+	background: #109177;
+}
+
+.form-wrapper legend{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

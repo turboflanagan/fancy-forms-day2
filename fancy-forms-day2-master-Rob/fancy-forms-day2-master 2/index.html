@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<!-- The below script is added to deal with tooltip conflict between bootstrap and jqueryUI.  Using JuqeryUI tooltip function named uitooltip. -->
+		<script type="text/javascript">$.widget.bridge('uitooltip', $.ui.tooltip);</script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+	<div class="form-wrapper">
+		<form name="signUpForm" onsubmit="return (validateForm());">
+			<div id="name-wrapper" class="form-group">
+				<h1>Sign up now!<span>Sign up and tell us what you think of our site!</span></h1>
+
+				<div class="section"><span>1</span>First Name & Address</div>
+				<div class="inner-wrap">
+					<label class="control-label">Your Full Name <input class="form-control" id="name" type="text" name="fullName" placeholder="Your Full Name"></label>
+
+					<label class="control-label">Address <textarea name="address"></textarea></label>
+				</div>
+			</div>
+			<div id="email-phone-wrapper">
+				<div class="section"><span>2</span>Email & Phone</div>
+				<div class="inner-wrap">
+			        <label class="control-label">Email Address <input type="email" name="email" /></label>
+			        <label class="control-label">Phone Number <input type="text" name="phoneNumber" /></label>
+				</div>
+			</div>
+			<div id="password-wrapper">
+				<div class="section"><span>3</span>Password</div>
+				<div class="inner-wrap">
+			        <label class="control-label">Password <input type="password" name="password" /></label>
+			        <label class="control-label">Confirm Password <input type="password" name="password2" /></label>
+			        <label class="control-label">Favorite Technologies<input type="text" id= "techs" name="techs"/></label>			
+					<label class="control-label">Birthday<input type="text" id="datepicker" name="datepicker"/></label>
+					<label class="control-label">Age<input id="spinner" name="value" value="30"></label>
+				</div>
+				<div class="button-section">
+					<input type="submit" value="Sign me up!">
+					<span class="privacy-policy">
+						<input type="checkbox" name="privacy">I agree to the Terms and Policies
+					</span>
+				</div>
+			</div>
+
+				<!-- This is text for showing tooltip from jQueryUI.
+				tooltip is applied to any thing with a title set! -->
+			<p><a href="#" title="That&apos;s what this widget is">Tooltips</a> can be attached to any element. When you hover
+			the element with your mouse, the title attribute is displayed in a little box next to the element, just like a native tooltip.</p>
+			<p>But as it's not a native tooltip, it can be styled. Any themes built with
+			<a href="http://jqueryui.com/themeroller/" title="ThemeRoller: jQuery UI&apos;s theme builder application">ThemeRoller</a>
+			will also style tooltips accordingly.</p>
+			<p>Tooltips are also useful for form elements, to show some additional information in the context of each field.</p>
+			<p><label for="age">Your age:</label><input id="age" title="We ask for your age only for statistical purposes."></p>
+			<p>Hover the field to see the tooltip.</p>
+		</form>
+
+	</div>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ -->
+
+
+
+	<script type="text/javascript">
+
+	function validateForm(){
+		// if(signUpForm.fullName.value == ""){
+		// if(document.getElementById('name').value == "")
+		$('#name').val();
+		if(signUpForm.fullName.value.length == ""){	
+			signUpForm.fullName.focus();
+			alert("You must enter your full name.");
+			document.getElementById('name-wrapper').className = 'form-group has-error';
+			return false;
+		}
+		if(sugnUpForm.address.value == ""){
+			signUpForm.fullName.focus();
+			alert("You must enter your full name.");
+
+		}
+	}
+
+
+
+	// jQueryUI library availableTags function for autofil in the "favorite technology" field.
+	$(function(){
+		var availableTags = [
+		"JavaScript",
+		"HTML5",
+		"jQuery",
+		"CSS3",
+		"SASS",
+		"Linux",
+		];
+		$( "#techs" ).autocomplete({
+      source: availableTags
+    });
+	});
+
+	// jQueryUI library datepicker function for choosing birthday
+	$(function(){
+		$( "#datepicker" ).datepicker({
+			dateFormat: "yy/mm/dd"
+		});
+	});
+
+	//spinner function for age
+	$(function() {
+    var spinner = $( "#spinner" ).spinner();
+	
+	});
+
+	$(function() {
+    	$( document ).uitooltip();
+  	});
+
+	$(function() {
+		$( "#tabs" ).tabs();
+	})
+
+
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
